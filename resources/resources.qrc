@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="Images">
+    <file>sunset_ocean.png</file>
+    <file>bg_overlay2.png</file>
+  </qresource>
+  <qresource prefix="Icons">
+    <file>icons8-add-40.png</file>
+    <file>icons8-complete-48.png</file>
+    <file>icons8-delete-100(1).png</file>
+    <file>icons8-delete-100.png</file>
+    <file>icons8-events-48.png</file>
+    <file>icons8-to-do-48.png</file>
+    <file>icons8-minimize-30.png</file>
+    <file>icons8-close-50.png</file>
+    <file>icons8-minimize-50.png</file>
+  </qresource>
+</RCC>

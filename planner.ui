@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>planner_app</class>
+ <widget class="QMainWindow" name="planner_app">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>854</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>854</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>854</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Planner Application</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="bg_image">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>861</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources/resources.qrc">:/Images/sunset_ocean.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bg_overlay">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>861</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources/resources.qrc">:/Images/bg_overlay2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="application_hotbar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>861</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="title">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Planner Application</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="minimize_button">
+    <property name="geometry">
+     <rect>
+      <x>755</x>
+      <y>10</y>
+      <width>42</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color:rgba(255, 255, 255, 0);
+	border-radius: 8px;
+}
+QPushButton:hover{
+	background-color: rgba(180, 180, 180, 140);
+}
+QPushButton:pressed{
+	background-color: rgba(180, 180, 180, 140);
+	border-style: inset;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/78742/horizontal-line&quot;&gt;minimize&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="resources/resources.qrc">
+      <normaloff>:/Icons/icons8-minimize-30.png</normaloff>:/Icons/icons8-minimize-30.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exit_button">
+    <property name="geometry">
+     <rect>
+      <x>802</x>
+      <y>10</y>
+      <width>42</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color:rgba(255, 255, 255, 0);
+	border-radius: 8px;
+}
+QPushButton:hover{
+	background-color:rgba(255, 0, 0, 140);
+}
+QPushButton:pressed{
+	background-color:rgba(255, 0, 0, 140);
+	border-style: inset;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/46/close&quot;&gt;Close&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="resources/resources.qrc">
+      <normaloff>:/Icons/icons8-close-50.png</normaloff>:/Icons/icons8-close-50.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLabel" name="list_widget_holder">
+    <property name="geometry">
+     <rect>
+      <x>354</x>
+      <y>56</y>
+      <width>485</width>
+      <height>409</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	
+	background-color: rgba(255, 160, 30, 120);
+	border-radius: 10px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCalendarWidget" name="calendarWidget">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>56</y>
+      <width>324</width>
+      <height>205</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="todo_list_button">
+    <property name="geometry">
+     <rect>
+      <x>69</x>
+      <y>276</y>
+      <width>216</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(221, 142, 147);
+
+	border-radius: 12px;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/13462/to-do&quot;&gt;To Do&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+    </property>
+    <property name="text">
+     <string>To Do List</string>
+    </property>
+    <property name="icon">
+     <iconset resource="resources/resources.qrc">
+      <normaloff>:/Icons/icons8-to-do-48.png</normaloff>:/Icons/icons8-to-do-48.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="events_button">
+    <property name="geometry">
+     <rect>
+      <x>69</x>
+      <y>317</y>
+      <width>216</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(150, 171, 189);
+	border-radius: 12px;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/g0jrgxI2JR5l/event-accepted&quot;&gt;Events&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+    </property>
+    <property name="text">
+     <string>Events</string>
+    </property>
+    <property name="icon">
+     <iconset resource="resources/resources.qrc">
+      <normaloff>:/Icons/icons8-events-48.png</normaloff>:/Icons/icons8-events-48.png</iconset>
+    </property>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>369</x>
+      <y>71</y>
+      <width>455</width>
+      <height>379</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QStackedWidget{
+	background-color: rgba(255, 160, 30, 0);
+	border-radius: 10px;
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QListWidget" name="todo_list_widget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>51</y>
+        <width>455</width>
+        <height>274</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QListWidget{
+	
+	color: rgb(255, 255, 255);
+	selection-background-color: rgba(221, 142, 147, 150);
+	background-color: rgba(255, 160, 30, 120);
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="todo_date_label">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>15</y>
+        <width>421</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Todo: Date Goes Here</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_todo_btn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>338</y>
+        <width>103</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(150, 171, 189);
+	border-radius: 12px;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/nkplpFWWQEKZ/add&quot;&gt;Add&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+      </property>
+      <property name="text">
+       <string>Add Task</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/resources.qrc">
+        <normaloff>:/Icons/icons8-add-40.png</normaloff>:/Icons/icons8-add-40.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="complete_todo_btn">
+      <property name="geometry">
+       <rect>
+        <x>118</x>
+        <y>338</y>
+        <width>102</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(221, 142, 147);
+	border-radius: 12px;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/O9gFFs8Wy3Cf/pass&quot;&gt;Complete&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+      </property>
+      <property name="text">
+       <string>Complete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/resources.qrc">
+        <normaloff>:/Icons/icons8-complete-48.png</normaloff>:/Icons/icons8-complete-48.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_todo_btn">
+      <property name="geometry">
+       <rect>
+        <x>235</x>
+        <y>338</y>
+        <width>103</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(150, 171, 189);
+	border-radius: 12px;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/102350/delete&quot;&gt;Delete&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/resources.qrc">
+        <normaloff>:/Icons/icons8-delete-100(1).png</normaloff>:/Icons/icons8-delete-100(1).png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_all_todo_btn">
+      <property name="geometry">
+       <rect>
+        <x>352</x>
+        <y>338</y>
+        <width>102</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(221, 142, 147);
+	border-radius: 12px;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/102350/delete&quot;&gt;Delete&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+      </property>
+      <property name="text">
+       <string>Delete All</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/resources.qrc">
+        <normaloff>:/Icons/icons8-delete-100.png</normaloff>:/Icons/icons8-delete-100.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="add_event_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>338</y>
+        <width>142</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(221, 142, 147);
+	border-radius: 12px;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/nkplpFWWQEKZ/add&quot;&gt;Add&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+      </property>
+      <property name="text">
+       <string>Add Event</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/resources.qrc">
+        <normaloff>:/Icons/icons8-add-40.png</normaloff>:/Icons/icons8-add-40.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_all_events_btn">
+      <property name="geometry">
+       <rect>
+        <x>313</x>
+        <y>338</y>
+        <width>142</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(221, 142, 147);
+	border-radius: 12px;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/102350/delete&quot;&gt;Delete&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+      </property>
+      <property name="text">
+       <string>Delete All</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/resources.qrc">
+        <normaloff>:/Icons/icons8-delete-100.png</normaloff>:/Icons/icons8-delete-100.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_event_button">
+      <property name="geometry">
+       <rect>
+        <x>157</x>
+        <y>338</y>
+        <width>141</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(150, 171, 189);
+	border-radius: 12px;
+}
+&lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com/icon/102350/delete&quot;&gt;Delete&lt;/a&gt; icon by &lt;a target=&quot;_blank&quot; href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/resources.qrc">
+        <normaloff>:/Icons/icons8-delete-100(1).png</normaloff>:/Icons/icons8-delete-100(1).png</iconset>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="events_list_widget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>51</y>
+        <width>455</width>
+        <height>274</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QListWidget{
+	
+	color: rgb(255, 255, 255);
+	selection-background-color: rgba(221, 142, 147, 150);
+	background-color: rgba(255, 160, 30, 120);
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="events_date_label">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>15</y>
+        <width>421</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Events: Date Goes Here</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <action name="actionAdd_Task">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/Icons/icons8-add-40.png</normaloff>:/Icons/icons8-add-40.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Task</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Task</string>
+   </property>
+  </action>
+  <action name="actionComplete_Task">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/Icons/icons8-complete-48.png</normaloff>:/Icons/icons8-complete-48.png</iconset>
+   </property>
+   <property name="text">
+    <string>Complete Task</string>
+   </property>
+   <property name="toolTip">
+    <string>Complete Task</string>
+   </property>
+  </action>
+  <action name="actionDelete_Selected_Task">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/Icons/icons8-delete-100(1).png</normaloff>:/Icons/icons8-delete-100(1).png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Selected Task</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete Selected Task</string>
+   </property>
+  </action>
+  <action name="actionDelete_All_Tasks">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/Icons/icons8-delete-100.png</normaloff>:/Icons/icons8-delete-100.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete All Tasks</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete All Tasks</string>
+   </property>
+  </action>
+  <action name="actionAdd_Event">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/Icons/icons8-add-40.png</normaloff>:/Icons/icons8-add-40.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Event</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Event</string>
+   </property>
+  </action>
+  <action name="actionDelete_Selected_Event">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/Icons/icons8-delete-100(1).png</normaloff>:/Icons/icons8-delete-100(1).png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Selected  Event</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete Selected Event</string>
+   </property>
+  </action>
+  <action name="actionDelete_All_Events">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/Icons/icons8-delete-100.png</normaloff>:/Icons/icons8-delete-100.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete All Events</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete All Events</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resources/resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>exit_button</sender>
+   <signal>clicked()</signal>
+   <receiver>planner_app</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>822</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>426</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>minimize_button</sender>
+   <signal>clicked()</signal>
+   <receiver>planner_app</receiver>
+   <slot>showMinimized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>775</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>426</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
